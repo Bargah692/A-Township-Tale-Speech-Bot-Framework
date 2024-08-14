@@ -72,9 +72,9 @@ recognizer.SpeechRecognized += (sender, e) =>
                 Console.WriteLine(speedResponse);
                 synthesizer.Speak(speedResponse);
 
-                consoleClient.RunCommandAsync($"player setstat {userName} speed 3");
-                consoleClient.RunCommandAsync($"player modify-stat {userName} luminosity -9 3");
-                consoleClient.RunCommandAsync($"player message {userName} 'Speed given' 2");
+                await consoleClient.RunCommandAsync($"player setstat {userName} speed 3");
+                await consoleClient.RunCommandAsync($"player modify-stat {userName} luminosity -9 3");
+                await consoleClient.RunCommandAsync($"player message {userName} 'Speed given' 2");
                 break;
 
             case "feed me":
@@ -82,9 +82,9 @@ recognizer.SpeechRecognized += (sender, e) =>
                 Console.WriteLine(feedResponse);
                 synthesizer.Speak(feedResponse);
 
-                consoleClient.RunCommandAsync($"player setstat {userName} hunger 3");
-                consoleClient.RunCommandAsync($"player modify-stat {userName}' lumonosity -9 3");
-                consoleClient.RunCommandAsync($"player message {userName} 'You're skibidi tummy has been skibidi filled' 2");
+                await consoleClient.RunCommandAsync($"player setstat {userName} hunger 3");
+                await consoleClient.RunCommandAsync($"player modify-stat {userName}' lumonosity -9 3");
+                await consoleClient.RunCommandAsync($"player message {userName} 'You're skibidi tummy has been skibidi filled' 2");
                 break;
 
             // Add more commands as needed
